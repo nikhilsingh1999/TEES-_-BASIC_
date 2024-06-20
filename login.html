@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="logcss.css">
+    <script src="https://kit.fontawesome.com/76b3e23b2e.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="img/tees.png" type="image/x-icon">
+    <title>Login Page</title>
+</head>
+
+<body> 
+
+    <script>
+          document.addEventListener('DOMContentLoaded', function(){
+            localStorage.clear();
+          })
+
+
+        
+
+        function open_menu() {
+            document.getElementById('sidemenubar').style.left = '0%';
+        }
+
+        function close_menu() {
+            document.getElementById('sidemenubar').style.left = "-100%";
+        }
+
+         function get_name(){
+            
+         }
+
+        function jao(){
+        }
+
+        function chng_name()
+        {
+            
+        }
+       
+        function login() {
+
+            user = ["Nikk@", "satyam@", "saniya@", "ankit@"];
+            
+            pass = ["123", "456", "789", "987"];
+
+            var unm = document.getElementById("username").value;
+            var epass = document.getElementById("password").value;
+
+            var corrct = false;
+
+            for (var i = 0; i < user.length; ++i) {
+                if (unm === user[i] && epass === pass[i]) {
+                    corrct = true;
+                    break;
+                }
+            }
+
+
+            if (corrct) {
+                logu=document.getElementById('loguu')
+                
+                setTimeout(() => {
+                logu.innerText="welcome "+unm;
+                fom=document.getElementsByClassName('f1');
+                fom.style.display='none';
+
+                },3000);
+
+                setTimeout(()=>{
+                    localStorage.setItem("Name",unm)
+                    window.location.href="index.html";
+                },4000)
+
+                logu.innerText="PLAESE WAIT. . .";
+                
+                return true;  
+            }
+
+            else {
+                alert("YOUR CREDENTIAL IS INCORRECT !! TRY AGAIN. . . . . .");
+                return false;
+            }
+        }
+
+
+    </Script>
+
+    <section class="sec1">
+
+        <div class="navbar">
+            <div class="navbar2">
+                <div class="icon">
+                    <button onclick="open_menu()" class="bar">
+                        <i class="fa-solid fa-bars-staggered ikon"></i>
+                    </button>
+                </div>
+
+                <div class="navlogo">
+                    <div class="logo"> </div>
+                </div>
+                <div class="menu">
+
+                    <a href="login.html"><i class="fa-solid fa-user items search1 "></i></a>
+                    <a href=""><i class="fa-solid fa-magnifying-glass items search2"></i></a>
+                    <a href=""><i class="fa-solid fa-camera items search3"></i></a>
+                    <a href=""><i class="fa-regular fa-heart items search4"></i></a>
+                    <a href=""><i class="fa-solid fa-bag-shopping items search5"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="uppernav">
+            <h5>BUY GET 5 USE CODE : NIKK007 </h5>
+        </div>
+
+        <div class="sidemenu" id="sidemenubar">
+            <div class="log">
+                <div class="login">
+                    <a href="login.html" class="logina"><button class="butt-log">
+                            <i class="fa-solid fa-user "></i>
+                        </button> LOG IN
+                    </a>
+
+                </div>
+
+                <button onclick="close_menu()" class="close">
+                    <i class="fa-regular fa-circle-xmark"></i>
+                </button>
+
+            </div>
+
+            <div class="menu-list">
+                <ul>
+                    <a href="#">
+                        <li>NEW ARRIVALS</li>
+                    </a>
+                    <a href="#">
+                        <li>BEST SELLERS</li>
+                    </a>
+                    <a href="#">
+                        <li>SHOP</li>
+                    </a>
+                    <a href="#">
+                        <li>TRACK ORDER</li>
+                    </a>
+                    <a href="#">
+                        <li>RETURN/EXCHANGE</li>
+                    </a>
+                    <a href="#">
+                        <li>SUPPORT</li>
+                    </a>
+                    <a href="#">
+                        <li>VISIT STORE</li>
+                    </a>
+                </ul>
+            </div>
+            <div class="social">
+                <div class="line1">
+                    <div class="media1"><a href="#"><i class="fa-brands fa-instagram socialicon"></i></a> </div>
+                    <div class="media2"><a href="#"><i class="fa-brands fa-square-facebook socialicon"></i></a></div>
+                    <div class="media3"><a href="#"><i class="fa-brands fa-twitter socialicon"></i></a></div>
+                </div>
+                <div class="line2">
+                    <div class="media4"><a href="#"><i class="fa-brands fa-linkedin socialicon"></i></a></div>
+                    <div class="media5"><a href="#"><i class="fa-brands fa-youtube socialicon"></i></a></div>
+                    <div class="media6"><a href="#"><i class="fa-brands fa-reddit socialicon"></i></a></div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="poster">
+
+        </div>
+        <div class="sec2">
+            <div class="poster2">
+            </div>
+        </div>
+
+
+        <div class="loginframe">
+            <div class="login-container">
+                <h2 id="loguu">Login</h2>
+                <form class="f1" action="#" onsubmit="return login();">
+                    <div class="form-group">
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+
+                    <input type="checkbox" name="logged in" id="logged-in"> keep me logged in !
+                    <br>
+                    <br>
+                    <input type="submit" value="LOGIN" id="loginbbb">
+                    <br>
+                    <br>
+                    <a href="http:// ">FORGOT PASSWORD ? </a>
+                </form>
+
+            </div>
+        </div>
+
+    </section>
+
+
+    <section class="sec9">
+        <div class="footer-a">
+            <div class="fa">
+                <h4>VISIT OFFLINE STORE</h4>
+                <p class="add">Indrapuri,bhopal(m.p.)</p>
+                <p class="get">Get direction</p>
+            </div>
+            <div class="fb">
+                <ul class="fbul">
+                    <li>Contact Us</li>
+                    <li>FAQ</li>
+                    <li>Blogs</li>
+                    <li>Terms & Conditions</li>
+                </ul>
+            </div>
+            <div class="fc">
+                <ul class="fcul">
+                    <li>PLACE RETURN / EXCHANGE REQUEST.</li>
+                    <li>RETURN / EXCHANGE POLICY.</li>
+                    <li>TRACK YOUR ORDER.</li>
+                </ul>
+            </div>
+            <div class="fd">
+                <p>CUSTOMER CARE</p>
+
+                <p>Timings:10am-6:00pm(mon-sat) <br>call: +696969696969 </p>
+                <p>E-main:supoort@tees.co.in</p>
+            </div>
+        </div>
+        <div class="footer-b">
+            <div class="copy">
+                <h5> &#169; 1991-2023 TEES | All Right Reserved. </h5>
+            </div>
+        </div>
+
+    </section>
+
+
+</body>
+
+</html>
